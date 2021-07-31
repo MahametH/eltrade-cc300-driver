@@ -1,11 +1,11 @@
 image: Visual Studio 2017
-clone_folder: c:\gopath\src\github.com\%APPVEYOR_ACCOUNT_NAME%\%APPVEYOR_PROJECT_SLUG%
+clone_folder: C:\DevLab\Go\src\github.com\%APPVEYOR_ACCOUNT_NAME%\%APPVEYOR_PROJECT_SLUG%
 
 # skip_non_tags: true
 
 # environment variables
 environment:
-  GOPATH: c:\gopath
+  GOPATH: C:\DevLab\Go
   VCS_URL: https://github.com/%APPVEYOR_REPO_NAME%
   GH_TOKEN:
     secure: ngbsm9x1/3brsx+4LDkgEtic5icav3AGs/omGGjorQ07/WjURDjb6VbxahKU03QI
@@ -23,8 +23,6 @@ install:
   - go get -u github.com/mh-cbon/never-fail
   - go get -u github.com/golang/dep/cmd/dep
   - go get -u github.com/mh-cbon/go-msi
-
-
 
 # build msi artifacts
 build_script:
@@ -45,7 +43,6 @@ build_script:
   - cp %GH_APP%-%GOARCH%-%VERSION%.msi %GH_APP%-%GOARCH%.msi
 
 deploy_script:
-
   - never-fail gh-api-cli upload-release-asset -t %GH_TOKEN% -g "*-386.msi" -o %GH_USER% -r %GH_APP% --ver %VERSION%
   - never-fail gh-api-cli upload-release-asset -t %GH_TOKEN% -g "*-amd64.msi" -o %GH_USER% -r %GH_APP% --ver %VERSION%
 

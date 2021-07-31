@@ -5,7 +5,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/geeckmc/eltrade-cc300-driver/server"
+	"eltrade-cc300-driver/server"
 	"github.com/juju/loggo"
 	"github.com/juju/loggo/loggocolor"
 	"github.com/kardianos/service"
@@ -40,7 +40,7 @@ func main() {
 	loggo.ReplaceDefaultWriter(loggocolor.NewWriter(os.Stderr))
 	svcConfig := &service.Config{
 		Name:        "eltradeCC300Driver",
-		DisplayName: "Eltrade CC330 Drvier",
+		DisplayName: "Eltrade CC330 Driver",
 		Description: "Driver for Eltrade Tax control device",
 	}
 
@@ -60,7 +60,7 @@ func main() {
 		switch args[1] {
 		case "install":
 			if err := s.Install(); err != nil {
-				fmt.Printf("fn:main -- intallation failed due to: %s", err.Error())
+				fmt.Printf("fn:main -- installation failed due to: %s", err.Error())
 				return
 			}
 			if err := s.Start(); err != nil {

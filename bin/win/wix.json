@@ -1,6 +1,6 @@
 {
   "product": "MeCEF",
-  "company": "41DEVS",
+  "company": "M'Startup IT Services",
   "license": "LICENSE",
   "upgrade-code": "3235b1ff-00b2-4511-ae88-eb888f0bc962",
   "files": {
@@ -16,8 +16,8 @@
   "shortcuts": {},
   "choco": {
     "description": "Eltrade CC300 Driver",
-    "project-url": "https://github.com/geeckmc/eltrade-cc300-driver",
-    "license-url": "https://github.com/geeckmc/eltrade-cc300-driver/LICENSE"
+    "project-url": "https://github.com/MahametH/eltrade-cc300-driver",
+    "license-url": "https://github.com/MahametH/eltrade-cc300-driver/LICENSE"
   },
   "hooks": [
     {
