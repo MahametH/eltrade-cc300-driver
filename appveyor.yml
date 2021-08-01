@@ -40,7 +40,7 @@ build_script:
   - set GOARCH=amd64
   - go build -o bin\win\application\eltrade.exe main.go
   - cd bin\win && go-msi set-guid
-  - go-msi make --msi %GH_APP%-%GOARCH%-%VERSION%.msi --version %VERSION% --arch %GOARCH%
+  - go-msi make --msi %GH_APP%-%GOARCH%-%VERSION%.msi --version %VERSION% --arch amd64
   - cp %GH_APP%-%GOARCH%-%VERSION%.msi %GH_APP%-%GOARCH%.msi
 
 deploy_script:
