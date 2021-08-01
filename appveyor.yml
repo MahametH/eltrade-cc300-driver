@@ -28,13 +28,13 @@ install:
 build_script:
   - set GOOS=windows
   # x386
-  - set GOARCH=386
-  - mkdir bin\win\application
-  - dep ensure
-  - go build -o bin\win\application\eltrade.exe main.go
-  - cd bin\win && go-msi set-guid
-  - go-msi make --msi %GH_APP%-%GOARCH%-%VERSION%.msi --version %VERSION% --arch %GOARCH%
-  - cp %GH_APP%-%GOARCH%-%VERSION%.msi %GH_APP%-%GOARCH%.msi
+#  - set GOARCH=386
+#  - mkdir bin\win\application
+##  - dep ensure
+#  - go build -o bin\win\application\eltrade.exe main.go
+#  - cd bin\win && go-msi set-guid
+#  - go-msi make --msi %GH_APP%-%GOARCH%-%VERSION%.msi --version %VERSION% --arch %GOARCH%
+#  - cp %GH_APP%-%GOARCH%-%VERSION%.msi %GH_APP%-%GOARCH%.msi
   # nuget package is built only for the x86 arch.
   # amd64
   - set GOARCH=amd64
@@ -43,7 +43,7 @@ build_script:
   - cp %GH_APP%-%GOARCH%-%VERSION%.msi %GH_APP%-%GOARCH%.msi
 
 deploy_script:
-  - never-fail gh-api-cli upload-release-asset -t %GH_TOKEN% -g "*-386.msi" -o %GH_USER% -r %GH_APP% --ver %VERSION%
+#  - never-fail gh-api-cli upload-release-asset -t %GH_TOKEN% -g "*-386.msi" -o %GH_USER% -r %GH_APP% --ver %VERSION%
   - never-fail gh-api-cli upload-release-asset -t %GH_TOKEN% -g "*-amd64.msi" -o %GH_USER% -r %GH_APP% --ver %VERSION%
 
 artifacts:
