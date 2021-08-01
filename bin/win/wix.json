@@ -2,9 +2,9 @@
   "product": "MeCEF",
   "company": "M'Startup IT Services",
   "license": "LICENSE",
-  "upgrade-code": "3235b1ff-00b2-4511-ae88-eb888f0bc962",
+  "upgrade-code": "432df87a-e2cf-4909-bb8a-bd5573a37390",
   "files": {
-    "guid": "5982fde6-b1ce-4454-b6db-e2b33561d208",
+    "guid": "4fe4b827-24a3-4f14-a4e2-ed74dd5c0f86",
     "items": [
       "application\\eltrade.exe"
     ]
